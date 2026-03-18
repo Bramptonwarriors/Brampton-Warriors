@@ -34,84 +34,22 @@ style="background-image: url('https://raw.githubusercontent.com/Bramptonwarriors
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
 
     <!-- PLAYER CARD -->
-    <div onclick="openProfile('SAHIL BAWA')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
+     <div class="bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SAHIL%20BAWA.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">SAHIL BAWA</h3>
         <p class="text-yellow-400 text-sm">Batsman</p>
       </div>
     </div>
-    </section>
-
-<!-- PLAYER PROFILE MODAL -->
-<div id="profileModal" class="fixed inset-0 hidden items-center justify-center bg-black/90">
-  <div class="w-full h-full relative">
-
-    <!-- BACKGROUND IMAGE -->
-    <img id="profileimage" class="absolute inset-0 w-full h-full object-cover opacity-30">
-
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center">
-      <h2 id="SAHIL BAWA" class="text-5xl font-bold mb-4"></h2>
-      <p id="RIGHT HAND BATSMAN" class="text-xl text-yellow-400 mb-6"></p>
-
-      <!-- STATS -->
-      <div class="grid grid-cols-3 gap-6">
-        <div class="bg-gray-800 p-4 rounded-xl">
-          <h3 id="runs" class="text-2xl font-bold"></h3>
-          <p>Runs</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl">
-          <h3 id="wickets" class="text-2xl font-bold"></h3>
-          <p>Wickets</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl">
-          <h3 id="matches" class="text-2xl font-bold"></h3>
-          <p>Matches</p>
-        </div>
-      </div>
-
-      <button onclick="closeProfile()" class="mt-8 bg-yellow-500 px-6 py-2 rounded">Close</button>
-    </div>
-  </div>
-</div>
-
-   <div onclick="openProfile('MANDIP SINGH')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
+  
+    <div class="bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANDIP%20SINGH.jpeg" class="w-full h-48 object-cover object-[center_10%]">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">MANDIP SINGH</h3>
         <p class="text-yellow-400 text-sm">Batsman</p>
       </div>
     </div>
-  <!-- PLAYER PROFILE MODAL -->
-<div id="profileModal" class="fixed inset-0 hidden items-center justify-center bg-black/90">
-  <div class="w-full h-full relative">
-
-    <!-- BACKGROUND IMAGE -->
-    <img id="profileimage" class="absolute inset-0 w-full h-full object-cover opacity-30">
-
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center">
-      <h2 id="MANDIP SINGH" class="text-5xl font-bold mb-4"></h2>
-      <p id="RIGHT HAND BATSMAN" class="text-xl text-yellow-400 mb-6"></p>
-          <!-- STATS -->
-      <div class="grid grid-cols-3 gap-6">
-        <div class="bg-gray-800 p-4 rounded-xl">
-          <h3 id="runs" class="text-2xl font-bold"></h3>
-          <p>Runs</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl">
-          <h3 id="wickets" class="text-2xl font-bold"></h3>
-          <p>Wickets</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl">
-          <h3 id="matches" class="text-2xl font-bold"></h3>
-          <p>Matches</p>
-        </div>
-      </div>
-
-      <button onclick="closeProfile()" class="mt-8 bg-yellow-500 px-6 py-2 rounded">Close</button>
-    </div>
-  </div>
-</div>
+ 
 
     <div class="bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KUSHAV%20SHARMA.jpeg" class="w-full h-48 object-cover object-top">
@@ -227,77 +165,7 @@ function openForm(){
 function closeForm(){
   document.getElementById('formModal').classList.add('hidden');
 }
-</script>
-  <script>
-  const players = {
-    player1: {
-      name: "SAHIL BAWA",
-      role: "RIGHT HAND BATSMAN",
-      img: "SAHIL BAWA.jpg",
-      runs: 262,
-      wickets: 9,
-      matches: 11
-    }
-  };
-
-  function openProfile(id){
-    const p = players[id];
-    document.getElementById('profileModal').classList.remove('hidden');
-    document.getElementById('profileModal').classList.add('flex');
-
-    document.getElementById('profileName').innerText = p.name;
-    document.getElementById('profileRole').innerText = p.role;
-    document.getElementById('profileImage').src = p.img;
-    document.getElementById('runs').innerText = p.runs;
-    document.getElementById('wickets').innerText = p.wickets;
-    document.getElementById('matches').innerText = p.matches;
-  }
-
-  function closeProfile(){
-    document.getElementById('profileModal').classList.add('hidden');
-  }
-</script>
-   <script>
-  const players = {
-    player1: {
-      name: "SAHIL BAWA",
-      role: "RIGHT HAND BATSMAN",
-      img: "SAHIL BAWA.jpg",
-      runs: 262,
-      wickets: 9,
-      matches: 11
-    }
-  };
-
-  function openProfile(id){
-    const p = players[id];
-    document.getElementById('profileModal').classList.remove('hidden');
-    document.getElementById('profileModal').classList.add('flex');
-
-    document.getElementById('profileName').innerText = p.name;
-    document.getElementById('profileRole').innerText = p.role;
-    document.getElementById('profileImage').src = p.img;
-    document.getElementById('runs').innerText = p.runs;
-    document.getElementById('wickets').innerText = p.wickets;
-    document.getElementById('matches').innerText = p.matches;
-  }
-
-  function closeProfile(){
-    document.getElementById('profileModal').classList.add('hidden');
-  }
-</script>
-  <script>
-  const players = {
-    player1: {
-      name: "MANDIP SINGH",
-      role: "RIGHT HAND BATSMAN",
-      img: "MANDIP SINGH.jpg",
-      runs: 145,
-      wickets: 1,
-      matches: 8
-    }
-  };
-
+</script>  
 
 <!-- FOOTER -->
 <footer class="text-center p-4 bg-black text-gray-500">
