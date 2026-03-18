@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brampton Warriors - IPL Style</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center p-5 bg-gradient-to-r from-yellow-500 to-orange-600 shadow-lg">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" class="w-12 h-12">
+      <h1 class="text-2xl font-bold">Brampton Warriors</h1>
+    </div>
+    <button onclick="openForm()" class="bg-black px-4 py-2 rounded-lg">Join Team</button>
+  </header>
+
+  <!-- HERO -->
+  <section class="text-center py-16 bg-[url('stadium.jpg')] bg-cover bg-center">
+    <div class="bg-black/70 py-10">
+      <h2 class="text-5xl font-extrabold text-yellow-400">WARRIORS</h2>
+      <p class="text-lg mt-2">Fearless Cricket • Elite Performance</p>
+    </div>
+  </section>
+
+  <!-- PLAYERS -->
+  <section class="py-12">
+    <h2 class="text-3xl text-center font-bold mb-10 text-yellow-400">Playing XI</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+
+      <!-- PLAYER CARD -->
+      <div class="bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition">
+        <img src="player1.jpg" class="w-full h-48 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="font-bold text-lg">Player Name</h3>
+          <p class="text-yellow-400 text-sm">Batsman</p>
+        </div>
+      </div>
+
+      <!-- COPY ABOVE CARD 11 TIMES -->
+
+    </div>
+  </section>
+
+  <!-- JERSEY -->
+  <section class="py-12 bg-gradient-to-r from-black to-gray-900 text-center">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-6">Official Jersey</h2>
+    <img src="jersey.jpg" class="mx-auto w-64 rounded-2xl shadow-2xl hover:scale-110 transition">
+  </section>
+
+  <!-- STATS -->
+  <section class="py-12 text-center">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-8">Team Stats</h2>
+    <div class="grid grid-cols-3 gap-6 max-w-xl mx-auto">
+      <div class="bg-gray-800 p-4 rounded-xl">
+        <h3 class="text-2xl font-bold">25</h3>
+        <p>Matches</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl">
+        <h3 class="text-2xl font-bold">18</h3>
+        <p>Wins</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl">
+        <h3 class="text-2xl font-bold">7</h3>
+        <p>Losses</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN FORM -->
+  <div id="formModal" class="fixed inset-0 bg-black/80 hidden justify-center items-center">
+    <div class="bg-gray-900 p-6 rounded-xl w-80 border border-yellow-500">
+      <h2 class="text-xl font-bold mb-4 text-yellow-400">Join Warriors</h2>
+      <form action="mailto:teambramptonwarriors@gmail.com" method="post" enctype="text/plain">
+        <input type="text" placeholder="Name" required class="w-full p-2 mb-3 rounded bg-gray-800">
+        <input type="email" placeholder="Email" required class="w-full p-2 mb-3 rounded bg-gray-800">
+        <textarea placeholder="Role / Experience" class="w-full p-2 mb-3 rounded bg-gray-800"></textarea>
+        <button class="bg-yellow-500 w-full py-2 rounded font-bold">Send</button>
+      </form>
+      <button onclick="closeForm()" class="mt-3 text-sm text-gray-400">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openForm(){
+      document.getElementById('formModal').classList.remove('hidden');
+      document.getElementById('formModal').classList.add('flex');
+    }
+    function closeForm(){
+      document.getElementById('formModal').classList.add('hidden');
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="text-center p-4 bg-black text-gray-500">
+    © 2026 Brampton Warriors
+  </footer>
+
+</body>
+</html>
