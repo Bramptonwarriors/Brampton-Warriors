@@ -161,20 +161,26 @@ style="background-image: url('https://raw.githubusercontent.com/Bramptonwarriors
   </div>
 </section>
   <!-- PLAYER POPUP -->
-<div id="playerModal" class="fixed inset-0 hidden justify-center items-center bg-black z-50">
-<img id="playerBg" class="absolute inset-0 w-full h-full object-cover opacity-100 ">
-<div class="relative text-center">
-<h2 id="playerName" class="text-5xl font-bold"></h2>
-<p id="playerRole" class="text-yellow-400 text-xl mb-6"></p>
+<div id="playerModal" class="fixed inset-0 hidden justify-center items-center bg-black/90 z-50">
+  <!-- Background HD image -->
+  <img id="playerBg" class="absolute inset-0 w-full h-full object-cover">
+  
+  <!-- Optional: dark overlay so text is readable -->
+  <div class="absolute inset-0 bg-black/50"></div>
 
-<div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
-<div class="bg-gray-800 p-4 rounded-xl"><h3 id="runs"></h3><p>Runs</p></div>
-<div class="bg-gray-800 p-4 rounded-xl"><h3 id="wickets"></h3><p>Wickets</p></div>
-<div class="bg-gray-800 p-4 rounded-xl"><h3 id="matches"></h3><p>Matches</p></div>
-</div>
+  <!-- Content -->
+  <div class="relative text-center z-10 px-4">
+    <h2 id="playerName" class="text-5xl font-bold text-white"></h2>
+    <p id="playerRole" class="text-yellow-400 text-xl mb-6"></p>
 
-<button onclick="closeProfile()" class="mt-6 bg-yellow-500 px-6 py-2 rounded">Close</button>
-</div>
+    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+      <div class="bg-gray-800 p-4 rounded-xl"><h3 id="runs"></h3><p>Runs</p></div>
+      <div class="bg-gray-800 p-4 rounded-xl"><h3 id="wickets"></h3><p>Wickets</p></div>
+      <div class="bg-gray-800 p-4 rounded-xl"><h3 id="matches"></h3><p>Matches</p></div>
+    </div>
+
+    <button onclick="closeProfile()" class="mt-6 bg-yellow-500 px-6 py-2 rounded">Close</button>
+  </div>
 </div>
 
 <!-- JERSEY -->
@@ -245,23 +251,19 @@ kawanjot:{name:"KAWANJOT SINGH",role:"Batsman",img:"https://raw.githubuserconten
 karanpal:{name:"KARANPAL SINGH",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KARANPAL%20SINGH.jpeg",runs:25,wickets:02,matches:02},
 honey:{name:"HONEY BRAR",role:"Batsman",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/HONEY%20BRAR.jpeg",runs:16,wickets:0,matches:01},};
 function openProfile(id){
-let p = players[id];
+  let p = players[id];
+  document.getElementById("playerModal").classList.remove("hidden");
+  document.getElementById("playerModal").classList.add("flex");
 
-// Create popup image automatically
-let popupImg = p.img.replace(".jpeg","1.jpeg");
+  document.getElementById("playerName").innerText = p.name;
+  document.getElementById("playerRole").innerText = p.role;
 
-document.getElementById("playerModal").classList.remove("hidden");
-document.getElementById("playerModal").classList.add("flex");
+  // Use HD popup image (1.jpeg)
+  document.getElementById("playerBg").src = p.img.replace(".jpeg","1.jpeg");
 
-document.getElementById("playerName").innerText = p.name;
-document.getElementById("playerRole").innerText = p.role;
-
-// USE NEW IMAGE (WITH 1)
-document.getElementById("playerBg").src = popupImg;
-
-document.getElementById("runs").innerText = p.runs;
-document.getElementById("wickets").innerText = p.wickets;
-document.getElementById("matches").innerText = p.matches;
+  document.getElementById("runs").innerText = p.runs;
+  document.getElementById("wickets").innerText = p.wickets;
+  document.getElementById("matches").innerText = p.matches;
 }
   function closeProfile(){
   document.getElementById("playerModal").classList.add("hidden");
