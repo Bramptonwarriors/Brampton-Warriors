@@ -248,18 +248,31 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   </a>
 
 </div>
-    <!-- SPONSOR VIDEO POPUP -->
+<!-- SPONSOR VIDEO POPUP -->
 <div id="videoModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50">
 
-  <video id="sponsorVideo" controls autoplay
+  <!-- VIDEO -->
+  <video id="sponsorVideo" controls playsinline
          class="w-full h-full object-contain">
     <source src="https://res.cloudinary.com/dtnmuheqj/video/upload/v1773959627/New%20Art%20of%20Living.mp4" type="video/mp4">
   </video>
 
-  <button onclick="closeSponsorVideo()"
-          class="absolute top-6 right-6 bg-yellow-500 px-4 py-2 rounded font-bold">
-    Close
-  </button>
+  <!-- TOP RIGHT BUTTONS -->
+  <div class="absolute top-6 right-6 flex gap-3">
+
+    <!-- WEBSITE BUTTON -->
+    <a href="https://agents.wfgcanada.ca/Mandip-Singh-177CGC" target="_blank"
+       class="bg-yellow-500 px-4 py-2 rounded font-bold text-black hover:bg-yellow-400 transition">
+      Website
+    </a>
+
+    <!-- CLOSE BUTTON -->
+    <button onclick="closeSponsorVideo()"
+            class="bg-gray-800 px-4 py-2 rounded font-bold text-white hover:bg-gray-700 transition">
+      Close
+    </button>
+
+  </div>
 
 </div>
     
@@ -327,18 +340,26 @@ function closeJersey(){
   document.getElementById("jerseyModal").classList.add("hidden");
   document.getElementById("jerseyModal").classList.remove("flex");
 }
-  function openSponsorVideo(){
-  document.getElementById("videoModal").classList.remove("hidden");
-  document.getElementById("videoModal").classList.add("flex");
+ function openSponsorVideo(){
+  let modal = document.getElementById("videoModal");
+  let video = document.getElementById("sponsorVideo");
 
-  document.getElementById("sponsorVideo").play();
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
+  video.currentTime = 0;
+  video.play();
 }
 
 function closeSponsorVideo(){
-  document.getElementById("videoModal").classList.add("hidden");
-  document.getElementById("videoModal").classList.remove("flex");
+  let modal = document.getElementById("videoModal");
+  let video = document.getElementById("sponsorVideo");
 
-  document.getElementById("sponsorVideo").pause();
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+
+  video.pause();
+  video.currentTime = 0; // 🔥 stops background play
 }
 </script>
 
