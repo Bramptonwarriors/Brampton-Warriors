@@ -303,21 +303,16 @@ function openProfile(id){
   document.getElementById("playerModal").classList.add("hidden");
   document.getElementById("playerModal").classList.remove("flex");
 }
-  function openVideo(){
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('sponsorVideo');
+ function openVideo(){
+  document.getElementById('videoModal').classList.remove('hidden');
 
-  modal.classList.remove('hidden');
-
-  video.src = "https://drive.google.com/file/d/1BdOIMh5sA10WbHxDDv2UunSdM0uWzVfR/preview";
+  document.getElementById('sponsorVideo').src =
+    "https://www.youtube.com/embed/u2yiwHYT3E0?autoplay=1";
 }
 
 function closeVideo(){
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('sponsorVideo');
-
-  modal.classList.add('hidden');
-  video.src = ""; // stops video
+  document.getElementById('videoModal').classList.add('hidden');
+  document.getElementById('sponsorVideo').src = "";
 }
 </script>
 
@@ -328,8 +323,7 @@ function closeVideo(){
   <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="w-8 h-5">
   <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg" class="w-8 h-5">
 </footer>
-  <div id="videoModal" class="fixed inset-0 bg-black hidden z-50">
-  <div id="videoModal" class="fixed inset-0 bg-black hidden z-50">
+ <div id="videoModal" class="fixed inset-0 bg-black hidden z-50">
   
   <!-- Close Button -->
   <button onclick="closeVideo()" 
@@ -340,7 +334,8 @@ function closeVideo(){
     id="sponsorVideo"
     class="w-full h-full"
     src=""
-    allow="autoplay"
+    allow="autoplay; fullscreen"
+    allowfullscreen
   ></iframe>
 
 </div>
