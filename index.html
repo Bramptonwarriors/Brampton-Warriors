@@ -237,9 +237,7 @@
 
     <!-- Sponsor 1 -->
     <a href="https://www.sponsor1website.com" target="_blank" rel="noopener noreferrer">
-      <img 
-        src="https://i.postimg.cc/T3rknRYN/sponsor1logo.jpg"
-        alt="Sponsor 1 Logo"
+      <img src="https://i.postimg.cc/T3rknRYN/sponsor1logo.jpg"
        onclick="openVideo()"
   class="h-28 object-contain hover:scale-110 transition cursor-pointer"
       >
@@ -312,7 +310,7 @@ function openProfile(id){
 
   modal.classList.remove('hidden');
 
-  video.src = "https://drive.google.com/file/d/1BdOIMh5sA10WbHxDDv2UunSdM0uWzVfR/view?usp=drivesdk";
+  video.src = "https://drive.google.com/file/d/1BdOIMh5sA10WbHxDDv2UunSdM0uWzVfR/preview";
 }
 
 function closeVideo(){
@@ -320,7 +318,7 @@ function closeVideo(){
   const video = document.getElementById('sponsorVideo');
 
   modal.classList.add('hidden');
-  video.src = ""; // stop video
+  video.src = ""; // stops video
 }
 </script>
 
@@ -331,6 +329,7 @@ function closeVideo(){
   <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="w-8 h-5">
   <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg" class="w-8 h-5">
 </footer>
+  <div id="videoModal" class="fixed inset-0 bg-black hidden z-50">
   <div id="videoModal" class="fixed inset-0 bg-black hidden z-50">
   
   <!-- Close Button -->
@@ -346,5 +345,6 @@ function closeVideo(){
   ></iframe>
 
 </div>
+
 </body>
 </html>
