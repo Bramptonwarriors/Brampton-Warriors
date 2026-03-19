@@ -194,9 +194,21 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
 <!-- JERSEY -->
 <section class="py-12 bg-gradient-to-r from-black to-gray-900 text-center">
   <h2 class="text-3xl font-bold text-yellow-400 mb-6">Official Jersey</h2>
- <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/jersey.jpeg"
-     class="mx-auto w-64 rounded-2xl shadow-2xl hover:scale-110 transition">
+<img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/jersey.jpeg"
+     onclick="openJersey()"
+     class="mx-auto w-64 rounded-2xl shadow-2xl hover:scale-110 transition cursor-pointer">
 </section>
+  <!-- JERSEY POPUP -->
+<div id="jerseyModal" class="fixed inset-0 hidden justify-center items-center bg-black/90 z-50">
+  
+  <img id="jerseyImage" 
+       class="max-w-4xl w-full rounded-xl shadow-2xl">
+
+  <button onclick="closeJersey()" 
+          class="absolute top-6 right-6 bg-yellow-500 px-4 py-2 rounded font-bold">
+    Close
+  </button>
+</div>
    <section class="py-12 text-center">
     <h2 class="text-3xl font-bold text-yellow-400 mb-8">Team Stats</h2>
     <div class="grid grid-cols-3 gap-6 max-w-xl mx-auto">
@@ -280,6 +292,18 @@ function openProfile(id){
   function closeProfile(){
   document.getElementById("playerModal").classList.add("hidden");
   document.getElementById("playerModal").classList.remove("flex");
+}
+  function openJersey(){
+  document.getElementById("jerseyModal").classList.remove("hidden");
+  document.getElementById("jerseyModal").classList.add("flex");
+
+  // 🔥 Put your HD jersey link here
+  document.getElementById("jerseyImage").src = "https://i.postimg.cc/fbHgtKMD/WARRIOR-LOGO.jpg";
+}
+
+function closeJersey(){
+  document.getElementById("jerseyModal").classList.add("hidden");
+  document.getElementById("jerseyModal").classList.remove("flex");
 }
 </script>
 
