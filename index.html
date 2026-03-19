@@ -14,7 +14,22 @@
   <div class="flex items-center gap-4">
     <!-- Bigger Logo -->
     <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/logo.jpeg" 
-         class="w-20 h-20 rounded-full shadow-lg">
+     onclick="openTeamLogo()"
+     class="w-20 h-20 rounded-full shadow-lg cursor-pointer hover:scale-110 transition">
+    <!-- TEAM LOGO POPUP -->
+<div id="teamLogoModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50">
+
+  <!-- FULL LOGO -->
+  <img id="teamLogoFull"
+       class="max-w-md w-full rounded-xl shadow-2xl">
+
+  <!-- CLOSE BUTTON -->
+  <button onclick="closeTeamLogo()"
+          class="absolute top-6 right-6 bg-yellow-500 px-4 py-2 rounded font-bold">
+    Close
+  </button>
+
+</div>
     
     <!-- Team Name + Flags -->
     <h1 class="text-4xl md:text-4xl font-extrabold flex items-center gap-2">
@@ -354,6 +369,22 @@ function closeSponsorVideo(){
 
   video.pause();
   video.currentTime = 0; // 🔥 stops background play
+}
+  function openTeamLogo(){
+  let modal = document.getElementById("teamLogoModal");
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
+  document.getElementById("teamLogoFull").src =
+    "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/logo.jpeg";
+}
+
+function closeTeamLogo(){
+  let modal = document.getElementById("teamLogoModal");
+
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
 }
 </script>
 
