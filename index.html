@@ -234,12 +234,34 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   <div class="flex flex-col sm:flex-row justify-center items-center gap-10">
 
     <!-- Sponsor 1 -->
-     <a href="https://agents.wfgcanada.ca/Mandip-Singh-177CGC" target="_blank" rel="noopener noreferrer">
-      <img src="https://i.postimg.cc/tJPHQKpX/NAOL.jpg"
-        class="h-28 object-contain transition-transform duration-300 hover:scale-110"
-        loading="lazy"
- >
-</a>
+<div class="flex flex-col items-center gap-3">
+
+  <!-- CLICKABLE LOGO (plays video) -->
+  <img src="https://i.postimg.cc/tJPHQKpX/NAOL.jpg"
+       onclick="openSponsorVideo()"
+       class="h-28 object-contain cursor-pointer hover:scale-110 transition">
+
+  <!-- WEBSITE BUTTON -->
+  <a href="https://agents.wfgcanada.ca/Mandip-Singh-177CGC" target="_blank"
+     class="bg-yellow-500 px-4 py-2 rounded text-black font-bold hover:bg-yellow-400 transition">
+    Visit Website
+  </a>
+
+</div>
+    <!-- SPONSOR VIDEO POPUP -->
+<div id="videoModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50">
+
+  <video id="sponsorVideo" controls autoplay
+         class="w-full h-full object-contain">
+    <source src="https://res.cloudinary.com/dtnmuheqj/video/upload/v1773959627/New%20Art%20of%20Living.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="closeSponsorVideo()"
+          class="absolute top-6 right-6 bg-yellow-500 px-4 py-2 rounded font-bold">
+    Close
+  </button>
+
+</div>
     
     <!-- Sponsor 2 -->
     <a href="https://www.nationalautosales.ca/" target="_blank" rel="noopener noreferrer">
@@ -304,6 +326,19 @@ function openProfile(id){
 function closeJersey(){
   document.getElementById("jerseyModal").classList.add("hidden");
   document.getElementById("jerseyModal").classList.remove("flex");
+}
+  function openSponsorVideo(){
+  document.getElementById("videoModal").classList.remove("hidden");
+  document.getElementById("videoModal").classList.add("flex");
+
+  document.getElementById("sponsorVideo").play();
+}
+
+function closeSponsorVideo(){
+  document.getElementById("videoModal").classList.add("hidden");
+  document.getElementById("videoModal").classList.remove("flex");
+
+  document.getElementById("sponsorVideo").pause();
 }
 </script>
 
