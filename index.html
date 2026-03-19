@@ -50,6 +50,69 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
     <p class="text-lg mt-2">Fearless Cricket • Elite Performance</p>
   </div> 
 </section>
+  <p class="text-yellow-400 mt-3">
+  Competing in BSL (T20) & LCL (T30) Leagues
+</p>
+  <!-- LEAGUES -->
+<section class="py-12 text-center">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-2">2026 Leagues</h2>
+
+  <p class="text-sm text-gray-300 mb-6">
+    <span class="text-yellow-400 font-bold">BSL</span> = Brampton Super League (T20 Format) <br>
+    <span class="text-yellow-400 font-bold">LCL</span> = Lakeshore Cricket League (T30 Format)
+  </p>
+
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-10">
+
+    <!-- BSL LOGO -->
+    <img src="https://i.postimg.cc/pdjGLnsX/BSL.jpg"
+         onclick="openLeague('bsl')"
+         class="h-32 cursor-pointer hover:scale-110 transition">
+
+    <!-- LCL LOGO -->
+    <img src="https://i.postimg.cc/pX1qQBS3/lakeshore.png"
+         onclick="openLeague('lcl')"
+         class="h-32 cursor-pointer hover:scale-110 transition">
+
+  </div>
+</section>
+  <!-- LEAGUE POPUP -->
+<div id="leagueModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50">
+
+  <div class="text-center w-full px-6">
+
+    <h2 id="leagueTitle" class="text-3xl font-bold text-yellow-400 mb-3"></h2>
+
+    <p id="leagueSubtitle" class="text-gray-300 mb-6"></p>
+
+    <!-- CAPTAIN + VICE CAPTAIN SIDE BY SIDE -->
+    <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+
+      <!-- CAPTAIN -->
+      <div class="text-center">
+        <img id="captainImg"
+             class="w-60 h-72 object-cover rounded-xl shadow-2xl">
+        <h3 class="text-yellow-400 font-bold mt-3">Captain</h3>
+        <p id="captainName" class="text-white"></p>
+      </div>
+
+      <!-- VICE CAPTAIN -->
+      <div class="text-center">
+        <img id="viceImg"
+             class="w-60 h-72 object-cover rounded-xl shadow-2xl">
+        <h3 class="text-yellow-400 font-bold mt-3">Vice Captain</h3>
+        <p id="viceName" class="text-white"></p>
+      </div>
+
+    </div>
+
+    <button onclick="closeLeague()"
+            class="mt-6 bg-yellow-500 px-6 py-2 rounded font-bold">
+      Close
+    </button>
+
+  </div>
+</div>
 <!-- PLAYERS -->
 <section class="py-12">
   <h2 class="text-3xl text-center font-bold mb-10 text-yellow-400">SQUAD</h2>
@@ -385,6 +448,49 @@ function closeTeamLogo(){
 
   modal.classList.add("hidden");
   modal.classList.remove("flex");
+}
+  const leagues = {
+  bsl: {
+    title: "BSL - Brampton Super League",
+    subtitle: "Speed, Agility, Domination",
+    desc: "Leading our fast-paced assault, the T20 captain brings tactical genius to the shortest format.",
+    captain: "SAHIL BAWA",
+    captainImg: "https://i.postimg.cc/W3h4ZTJ4/sahil-c.jpg",
+    vice: "KUSHAV SHARMA",
+    viceImg: "https://i.postimg.cc/P5x0TJGj/kushav-vc.jpg"
+  },
+
+  lcl: {
+    title: "LCL - Lakeshore Cricket League",
+    subtitle: "Patience, Power, Strategy",
+    desc: "For the longer battles, our T30 captain ensures we have the endurance to outlast and outplay.",
+    captain: "JASPREET SINGH",
+    captainImg: "https://i.postimg.cc/k4rHQy2V/jaspreet-c.jpg",
+    vice: "MANDIP SINGH",
+    viceImg: "https://i.postimg.cc/GtKS1wqY/mandip-vc.jpg"
+  }
+};
+
+function openLeague(id){
+  let l = leagues[id];
+
+  document.getElementById("leagueModal").classList.remove("hidden");
+  document.getElementById("leagueModal").classList.add("flex");
+
+  document.getElementById("leagueTitle").innerText = l.title;
+  document.getElementById("leagueSubtitle").innerHTML =
+    `<span class="text-yellow-400 font-semibold">${l.subtitle}</span><br><span class="text-gray-300 text-sm">${l.desc}</span>`;
+
+  document.getElementById("captainImg").src = l.captainImg;
+  document.getElementById("captainName").innerText = l.captain;
+
+  document.getElementById("viceImg").src = l.viceImg;
+  document.getElementById("viceName").innerText = l.vice;
+}
+
+function closeLeague(){
+  document.getElementById("leagueModal").classList.add("hidden");
+  document.getElementById("leagueModal").classList.remove("flex");
 }
 </script>
 
