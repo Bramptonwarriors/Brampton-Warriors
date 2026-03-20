@@ -8,11 +8,11 @@
 
    <style>
     .player-img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      border-radius: 16px;
-    }
+  width: 100%;
+  max-height: 40vh;
+  object-fit: contain;
+  border-radius: 16px;
+}
   </style>
 </head>
 
@@ -82,8 +82,8 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   </div>
 </section>
   <!-- LEAGUE POPUP -->
-<div id="leagueModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50 overflow-y-auto">
-
+<div id="leagueModal"
+  class="fixed inset-0 hidden flex-col items-center justify-start overflow-y-auto bg-black/95 z-50 p-4">
   <div class="text-center w-full px-6 py-10">
 
     <h2 id="leagueTitle" class="text-3xl font-bold text-yellow-400 mb-2"></h2>
@@ -96,7 +96,7 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
       <!-- CAPTAIN -->
       <div class="text-center max-w-sm">
        <img id="captainImg"
-     class="player-img">
+     class="w-full max-h-[40vh] object-contain rounded-xl">
         <h3 class="text-yellow-400 font-bold mt-4 text-xl">Captain</h3>
         <p id="captainName" class="text-white"></p>
       </div>
@@ -104,7 +104,7 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
       <!-- VICE CAPTAIN -->
       <div class="text-center max-w-sm">
         <img id="viceImg"
-             class="player-img">
+     class="w-full max-h-[40vh] object-contain rounded-xl">
         
         <h3 class="text-yellow-400 font-bold mt-4 text-xl">Vice Captain</h3>
         <p id="viceName" class="text-white"></p>
