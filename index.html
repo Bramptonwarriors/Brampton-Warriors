@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brampton Warriors - IPL Style</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+   <style>
+    .player-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+  </style>
 </head>
 
 <body class="bg-gradient-to-br from-black via-gray-900 to-yellow-700 text-white font-sans">
@@ -57,12 +66,12 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   <div class="flex flex-col sm:flex-row justify-center items-center gap-20">
     
     <!-- BSL LOGO -->
-    <img src="https://i.postimg.cc/zXSp6rVS/BSL2026.jpg"
+    <img src="https://i.postimg.cc/zXSp6rVS/BSL2026.jpg class="player-img""
          onclick="openLeague('bsl')"
          class="h-44 cursor-pointer hover:scale-110 transition">
 
     <!-- LCL LOGO -->
-    <img src="https://i.postimg.cc/pX1qQBS3/lakeshore.png"
+    <img src="https://i.postimg.cc/pX1qQBS3/lakeshore.png class="player-img""
          onclick="openLeague('lcl')"
          class="h-44 cursor-pointer hover:scale-110 transition">
 
@@ -83,7 +92,7 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
       <!-- CAPTAIN -->
       <div class="text-center max-w-sm">
         <img id="captainImg"
-             class="w-full h-[420px] object-cover rounded-2xl shadow-2xl">
+             class="player-img"">
         
         <h3 class="text-yellow-400 font-bold mt-4 text-xl">Captain</h3>
         <p id="captainName" class="text-white"></p>
@@ -92,7 +101,7 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
       <!-- VICE CAPTAIN -->
       <div class="text-center max-w-sm">
         <img id="viceImg"
-             class="w-full h-[420px] object-cover rounded-2xl shadow-2xl">
+             class="player-img">
         
         <h3 class="text-yellow-400 font-bold mt-4 text-xl">Vice Captain</h3>
         <p id="viceName" class="text-white"></p>
