@@ -69,37 +69,48 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   </div>
 </section>
   <!-- LEAGUE POPUP -->
-<div id="leagueModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50">
+<div id="leagueModal" class="fixed inset-0 hidden justify-center items-center bg-black/95 z-50 overflow-y-auto">
 
-  <div class="text-center w-full px-6">
+  <div class="text-center w-full px-6 py-10">
 
-    <h2 id="leagueTitle" class="text-3xl font-bold text-yellow-400 mb-3"></h2>
+    <h2 id="leagueTitle" class="text-3xl font-bold text-yellow-400 mb-2"></h2>
 
-    <p id="leagueSubtitle" class="text-gray-300 mb-6"></p>
+    <div id="leagueSubtitle" class="text-gray-300 mb-8"></div>
 
-    <!-- CAPTAIN + VICE CAPTAIN SIDE BY SIDE -->
-    <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+    <!-- PLAYERS -->
+    <div class="flex flex-col md:flex-row justify-center items-start gap-16">
 
       <!-- CAPTAIN -->
-      <div class="text-center">
+      <div class="text-center max-w-sm">
         <img id="captainImg"
-             class="w-60 h-72 object-cover rounded-xl shadow-2xl">
-        <h3 class="text-yellow-400 font-bold mt-3">Captain</h3>
+             class="w-full h-[420px] object-cover rounded-2xl shadow-2xl">
+        
+        <h3 class="text-yellow-400 font-bold mt-4 text-xl">Captain</h3>
         <p id="captainName" class="text-white"></p>
       </div>
 
       <!-- VICE CAPTAIN -->
-      <div class="text-center">
+      <div class="text-center max-w-sm">
         <img id="viceImg"
-             class="w-60 h-72 object-cover rounded-xl shadow-2xl">
-        <h3 class="text-yellow-400 font-bold mt-3">Vice Captain</h3>
+             class="w-full h-[420px] object-cover rounded-2xl shadow-2xl">
+        
+        <h3 class="text-yellow-400 font-bold mt-4 text-xl">Vice Captain</h3>
         <p id="viceName" class="text-white"></p>
       </div>
 
     </div>
 
+    <!-- DESCRIPTION UNDER IMAGES -->
+    <div class="mt-10 max-w-3xl mx-auto text-center">
+
+      <p id="leagueLine1" class="text-yellow-400 font-bold text-lg"></p>
+
+      <p id="leagueLine2" class="text-gray-300 mt-2"></p>
+
+    </div>
+
     <button onclick="closeLeague()"
-            class="mt-6 bg-yellow-500 px-6 py-2 rounded font-bold">
+            class="mt-8 bg-yellow-500 px-6 py-2 rounded font-bold">
       Close
     </button>
 
@@ -445,7 +456,8 @@ function closeTeamLogo(){
   bsl: {
     title: "BSL - Brampton Super League",
     subtitle: "Speed, Agility, Domination",
-    desc: "Leading our fast-paced assault, the T20 captain brings tactical genius to the shortest format.",
+    line1: "Speed, Agility, Domination",
+    line2: "Leading our fast-paced assault, the T20 captain brings tactical genius to the shortest format.",
     captain: "SAHIL BAWA",
     captainImg: "https://i.postimg.cc/W3h4ZTJ4/sahil-c.jpg",
     vice: "KUSHAV SHARMA",
@@ -455,7 +467,8 @@ function closeTeamLogo(){
   lcl: {
     title: "LCL - Lakeshore Cricket League",
     subtitle: "Patience, Power, Strategy",
-    desc: "For the longer battles, our T30 captain ensures we have the endurance to outlast and outplay.",
+   line1: "Patience, Power, Strategy",
+    line2: "For the longer battles, our T30 captain ensures we have the endurance to outlast and outplay.",
     captain: "JASPREET SINGH",
     captainImg: "https://i.postimg.cc/k4rHQy2V/jaspreet-c.jpg",
     vice: "MANDIP SINGH",
@@ -470,14 +483,17 @@ function openLeague(id){
   document.getElementById("leagueModal").classList.add("flex");
 
   document.getElementById("leagueTitle").innerText = l.title;
-  document.getElementById("leagueSubtitle").innerHTML =
-    `<span class="text-yellow-400 font-semibold">${l.subtitle}</span><br><span class="text-gray-300 text-sm">${l.desc}</span>`;
+  document.getElementById("leagueSubtitle").innerText = l.subtitle;
 
   document.getElementById("captainImg").src = l.captainImg;
   document.getElementById("captainName").innerText = l.captain;
 
   document.getElementById("viceImg").src = l.viceImg;
   document.getElementById("viceName").innerText = l.vice;
+
+  // 🔥 TEXT UNDER IMAGES
+  document.getElementById("leagueLine1").innerText = l.line1;
+  document.getElementById("leagueLine2").innerText = l.line2;
 }
 
 function closeLeague(){
