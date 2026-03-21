@@ -269,7 +269,12 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   
   <div class="relative w-full max-w-4xl">
   <!-- Background HD image -->
-<img id="playerBg" class="w-full h-full object-contain bg-black">
+<img id="playerBg"
+     class="w-full max-h-[70vh] object-contain bg-black rounded-xl">
+    <div class="absolute top-6 left-6 z-20 text-left">
+  <h2 id="playerName" class="text-4xl font-bold text-white"></h2>
+  <p id="playerRole" class="text-yellow-400 text-lg"></p>
+</div>
 
 <!-- DARK OVERLAY -->
 <div class="absolute inset-0 bg-black/50 z-0">
@@ -295,9 +300,9 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   </div>
 
 </div>
-
-   <div class="flex justify-center mt-10">
-  <button onclick="closeProfile()" class="bg-yellow-500 px-6 py-2 rounded">
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
+  <button onclick="closeProfile()"
+          class="bg-yellow-500 px-6 py-2 rounded font-bold">
     Close
   </button>
 </div>
