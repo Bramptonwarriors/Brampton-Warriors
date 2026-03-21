@@ -269,18 +269,12 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
   
   <div class="relative w-full max-w-4xl">
   <!-- Background HD image -->
- <img id="playerBg" class="absolute inset-0 w-full h-full object-contain bg-black">
-  
-  <!-- Optional: dark overlay so text is readable -->
-  <div class="absolute inset-0 bg-black/50">
-    
-  </div>
+<img id="playerBg" class="w-full h-full object-contain bg-black">
 
-  <!-- Content -->
-  <div class="relative text-center z-10 px-4 mb-20">
-   <h2 id="playerName" class="text-5xl font-bold text-white mt-10"></h2>
-   <p id="playerRole" class="text-yellow-400 text-xl mb-8"></p>
+<!-- DARK OVERLAY -->
+<div class="absolute inset-0 bg-black/50 z-0"></div>
 
+<!-- ✅ STATS (PUT HERE) -->
 <div class="absolute top-6 right-6 flex flex-col gap-3 z-20">
 
   <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
@@ -297,8 +291,6 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
     <h3 id="matches" class="font-bold"></h3>
     <p class="text-xs">Matches</p>
   </div>
-
-</div>
 
 </div>
 
