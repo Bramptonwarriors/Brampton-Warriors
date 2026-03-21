@@ -265,47 +265,53 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
 </section>
   <!-- PLAYER POPUP -->
 <div id="playerModal"
-     class="fixed inset-0 hidden flex justify-center items-center bg-black/90 z-50">
-  
-  <div class="relative w-full max-w-4xl">
-  <!-- Background HD image -->
-<img id="playerBg"
-     class="w-full max-h-[70vh] object-contain bg-black rounded-xl">
-    <div class="absolute top-6 left-6 z-20 text-left">
-  <h2 id="playerName" class="text-4xl font-bold text-white"></h2>
-  <p id="playerRole" class="text-yellow-400 text-lg"></p>
-</div>
+     class="fixed inset-0 hidden items-center justify-center bg-black/90 z-50">
 
-<!-- DARK OVERLAY -->
-<div class="absolute inset-0 bg-black/50 z-0">
-  
-</div>
+  <!-- POPUP CARD (IMPORTANT ISOLATION) -->
+  <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden">
 
-<!-- ✅ STATS (PUT HERE) -->
-<div class="absolute top-6 right-6 flex flex-col gap-3 z-20">
+    <!-- IMAGE -->
+    <img id="playerBg"
+         class="w-full max-h-[75vh] object-contain bg-black">
 
-  <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
-    <h3 id="runs" class="font-bold"></h3>
-    <p class="text-xs">Runs</p>
+    <!-- DARK OVERLAY -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- NAME + ROLE -->
+    <div class="absolute top-6 left-6 z-20">
+      <h2 id="playerName" class="text-4xl font-bold text-white"></h2>
+      <p id="playerRole" class="text-yellow-400 text-lg"></p>
+    </div>
+
+    <!-- STATS (TOP RIGHT FIXED) -->
+    <div class="absolute top-6 right-6 z-20 flex flex-col gap-3">
+
+      <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
+        <h3 id="runs" class="font-bold"></h3>
+        <p class="text-xs">Runs</p>
+      </div>
+
+      <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
+        <h3 id="wickets" class="font-bold"></h3>
+        <p class="text-xs">Wickets</p>
+      </div>
+
+      <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
+        <h3 id="matches" class="font-bold"></h3>
+        <p class="text-xs">Matches</p>
+      </div>
+
+    </div>
+
+    <!-- CLOSE BUTTON (FIXED WORKING) -->
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-30">
+      <button onclick="closeProfile()"
+              class="bg-yellow-500 px-6 py-2 rounded font-bold text-black">
+        Close
+      </button>
+    </div>
+
   </div>
-
-  <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
-    <h3 id="wickets" class="font-bold"></h3>
-    <p class="text-xs">Wickets</p>
-  </div>
-
-  <div class="bg-gray-800/80 p-3 rounded-xl w-20 text-center">
-    <h3 id="matches" class="font-bold"></h3>
-    <p class="text-xs">Matches</p>
-  </div>
-
-</div>
-<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
-  <button onclick="closeProfile()"
-          class="bg-yellow-500 px-6 py-2 rounded font-bold">
-    Close
-  </button>
-</div>
 </div>
 
 <!-- JERSEY -->
