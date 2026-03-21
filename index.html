@@ -18,37 +18,45 @@
 .glow-text {
   text-shadow:
     0 0 10px rgba(250,204,21,0.8),
-    0 0 20px rgba(250,204,21,0.6),
-    0 0 40px rgba(250,204,21,0.4);
+    0 0 20px rgba(250,204,21,0.6);
 }
 
-/* LIGHT LINE BASE */
-.light-line {
-  position: absolute;
-  width: 200%;
+/* BLACK LINE BASE */
+.line-container {
+  position: relative;
+  width: 220px;
   height: 3px;
+  background: black;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+/* GOLD MOVING STREAK */
+.gold-line {
+  position: absolute;
+  width: 40%;
+  height: 100%;
   background: linear-gradient(90deg, transparent, #facc15, transparent);
-  opacity: 0.9;
 }
 
-/* RIGHT ➜ LEFT */
-@keyframes moveRightToLeft {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+/* TOP LINE: RIGHT ➜ LEFT */
+@keyframes moveRTL {
+  0% { transform: translateX(150%); }
+  100% { transform: translateX(-150%); }
 }
 
-/* LEFT ➜ RIGHT */
-@keyframes moveLeftToRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
+.move-right-to-left {
+  animation: moveRTL 2s linear infinite;
 }
 
-.right-move {
-  animation: moveRightToLeft 2.5s linear infinite;
+/* BOTTOM LINE: LEFT ➜ RIGHT */
+@keyframes moveLTR {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150%); }
 }
 
-.left-move {
-  animation: moveLeftToRight 2.5s linear infinite;
+.move-left-to-right {
+  animation: moveLTR 2s linear infinite;
 }
   </style>
 </head>
@@ -90,27 +98,28 @@ class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900
 </header>
 
 <!-- HERO -->
-<section <div class="flex flex-col items-center gap-6">
+<section
+  <div class="flex flex-col items-center gap-6">
 
-  <!-- LIGHT LINES -->
-  <div class="relative w-full max-w-2xl h-6 overflow-hidden">
-
-    <!-- TOP LINE (RIGHT ➜ LEFT) -->
-    <div class="light-line right-move"></div>
-
-    <!-- BOTTOM LINE (LEFT ➜ RIGHT) -->
-    <div class="light-line left-move top-3"></div>
-
+  <!-- TOP LINE -->
+  <div class="line-container">
+    <div class="gold-line move-right-to-left"></div>
   </div>
 
   <!-- MAIN TEXT -->
-  <h2 class="text-5xl md:text-6xl font-extrabold text-yellow-400 glow-text">
+  <h2 class="text-5xl md:text-6xl font-extrabold text-yellow-400 glow-text text-center">
     READY TO ROLL
   </h2>
 
-  <p class="text-lg text-gray-300 tracking-wide">
+  <!-- SUB TEXT -->
+  <p class="text-lg text-gray-300 tracking-wide text-center">
     Fearless Cricket • Elite Performance
   </p>
+
+  <!-- BOTTOM LINE -->
+  <div class="line-container">
+    <div class="gold-line move-left-to-right"></div>
+  </div>
 
 </div>
 </section>
