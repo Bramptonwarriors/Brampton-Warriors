@@ -170,11 +170,7 @@
 
 </div>
 </header>
-    <!-- SOCIAL MENU BUTTON (3 lines) -->
-<button id="socialBtn" onclick="toggleSocialMenu()" 
-  class="fixed top-5 right-5 z-[9999] bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
-  <i id="menuIcon" class="fas fa-bars text-xl"></i>
-</button>
+  
 <!-- SOCIAL DROPDOWN -->
 <div id="socialDropdown"
   class="fixed top-20 right-5 z-[9999] bg-black border border-yellow-500 rounded-xl p-4 flex flex-col gap-4 shadow-xl">
@@ -734,15 +730,13 @@ function closeLeague(){
     loader.style.display = "none";
   }, 500);
 }
-   document.addEventListener("click", function(event) {
+  document.addEventListener("click", function(event) {
   let menu = document.getElementById("socialDropdown");
   let button = document.getElementById("socialBtn");
 
-  let isClickInsideMenu = menu.contains(event.target);
-  let isClickButton = button.contains(event.target);
-
-  if (!isClickInsideMenu && !isClickButton) {
+  if (!menu.contains(event.target) && !button.contains(event.target)) {
     menu.classList.remove("show");
+    document.getElementById("menuIcon").classList.replace("fa-xmark", "fa-bars");
   }
 });
 function toggleSocialMenu() {
