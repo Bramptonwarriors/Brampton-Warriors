@@ -112,11 +112,55 @@
             
     </h1>
   </div>
-<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfy2YJqUhBA-9AC7NJXspSHwrmTIviGZ0MCnFEtui_7l0oVoA/viewform?usp=header', '_blank')" 
-class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900 transition">
-  Join Team
-</button>
+<div class="flex items-center gap-3">
+
+  <!-- JOIN BUTTON -->
+  <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfy2YJqUhBA-9AC7NJXspSHwrmTIviGZ0MCnFEtui_7l0oVoA/viewform?usp=header', '_blank')" 
+    class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900 transition">
+    Join Team
+  </button>
+
+  <!-- HAMBURGER BUTTON -->
+  <button onclick="toggleSocials()"
+    class="bg-black px-4 py-3 rounded-lg text-yellow-400 text-xl hover:bg-gray-900 transition">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+</div>
 </header>
+  <!-- DROPDOWN SOCIAL MENU -->
+<div id="socialMenu"
+  class="hidden absolute right-5 top-24 bg-black border border-yellow-500 rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50">
+
+  <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank">
+    <i class="fa-brands fa-instagram text-yellow-400 text-xl"></i>
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61578513874395" target="_blank">
+    <i class="fa-brands fa-facebook text-yellow-400 text-xl"></i>
+  </a>
+
+  <a href="https://www.snapchat.com/@bramptonw2026" target="_blank">
+    <i class="fa-brands fa-snapchat text-yellow-400 text-xl"></i>
+  </a>
+
+  <a href="https://www.youtube.com/@BRAMPTONWARRIORSCC" target="_blank">
+    <i class="fa-brands fa-youtube text-yellow-400 text-xl"></i>
+  </a>
+
+  <a href="https://x.com/BramptonW29424" target="_blank">
+    <i class="fa-brands fa-x-twitter text-yellow-400 text-xl"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@brampton_warriors?lang=en" target="_blank">
+    <i class="fa-brands fa-tiktok text-yellow-400 text-xl"></i>
+  </a>
+
+  <a href="mailto:teambramptonwarriors@gmail.com">
+    <i class="fa-solid fa-envelope text-yellow-400 text-xl"></i>
+  </a>
+
+</div>
 
 <!-- HERO -->
 <section
@@ -702,57 +746,6 @@ function closeLeague(){
 </div>
 
 </footer>
-<!-- FLOATING SOCIAL BUTTON -->
-<div class="fixed right-5 bottom-20 z-50">
-
-  <!-- MAIN BUTTON -->
-  <button onclick="toggleSocials()"
-    class="bg-yellow-500 text-black w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-2xl hover:scale-110 transition">
-    <i class="fa-solid fa-share-nodes"></i>
-  </button>
-
-  <!-- DROPDOWN ICONS -->
-  <div id="socialMenu"
-    class="hidden flex-col items-center gap-3 mt-4">
-
-    <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-brands fa-instagram text-black"></i>
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=61578513874395" target="_blank"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-brands fa-facebook text-black"></i>
-    </a>
-
-    <a href="https://www.snapchat.com/@bramptonw2026" target="_blank"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-brands fa-snapchat text-black"></i>
-    </a>
-
-    <a href="https://www.youtube.com/@BRAMPTONWARRIORSCC" target="_blank"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-brands fa-youtube text-black"></i>
-    </a>
-
-    <a href="https://x.com/BramptonW29424" target="_blank"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-brands fa-x-twitter text-black"></i>
-    </a>
-
-    <a href="https://www.tiktok.com/@brampton_warriors?lang=en" target="_blank"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-brands fa-tiktok text-black"></i>
-    </a>
-
-    <a href="mailto:teambramptonwarriors@gmail.com"
-       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-      <i class="fa-solid fa-envelope text-black"></i>
-    </a>
-
-  </div>
-
-</div>
 
 </body>
 </html>
