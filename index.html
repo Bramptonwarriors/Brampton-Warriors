@@ -744,20 +744,30 @@ function closeLeague(){
     loader.style.display = "none";
   }, 500);
 }
+   document.addEventListener("click", function(event) {
+  let menu = document.getElementById("socialDropdown");
+  let button = document.getElementById("socialBtn");
 
-  function toggleSocialMenu() {
+  let isClickInsideMenu = menu.contains(event.target);
+  let isClickButton = button.contains(event.target);
+
+  if (!isClickInsideMenu && !isClickButton) {
+    menu.classList.remove("show");
+  }
+});
+function toggleSocialMenu() {
   let menu = document.getElementById("socialDropdown");
   let icon = document.getElementById("menuIcon");
 
   menu.classList.toggle("show");
 
   if (menu.classList.contains("show")) {
-    icon.classList.remove("fa-bars");
-    icon.classList.add("fa-xmark");
+    icon.classList.replace("fa-bars", "fa-xmark");
   } else {
-    icon.classList.remove("fa-xmark");
-    icon.classList.add("fa-bars");
+    icon.classList.replace("fa-xmark", "fa-bars");
   }
+}
+  
 }
 </script>
 
