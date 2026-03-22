@@ -127,6 +127,9 @@
      html {
   scroll-behavior: smooth;
 }
+     #socialBtn, #socialDropdown {
+  -webkit-tap-highlight-color: transparent;
+}
   </style>
 </head>
 
@@ -172,19 +175,18 @@
     Join Team
   </button>
 
-  <!-- SOCIAL MENU BUTTON (3 lines) -->
- <button id="socialBtn" onclick="toggleSocialMenu()" 
-  class="bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
 
-  <i id="menuIcon" class="fas fa-bars text-xl"></i>
-
-</button>
 
 </div>
 </header>
+    <!-- SOCIAL MENU BUTTON (3 lines) -->
+<button id="socialBtn" onclick="toggleSocialMenu()" 
+  class="fixed top-5 right-5 z-[9999] bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
+  <i id="menuIcon" class="fas fa-bars text-xl"></i>
+</button>
 <!-- SOCIAL DROPDOWN -->
-<div id="socialDropdown" class="absolute right-5 top-24 bg-black border border-yellow-500 rounded-xl p-4 flex flex-col gap-4 shadow-xl z-50">
-
+<div id="socialDropdown"
+  class="fixed top-20 right-5 z-[9999] bg-black border border-yellow-500 rounded-xl p-4 flex flex-col gap-4 shadow-xl">
   <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank">
     <i class="fa-brands fa-instagram text-yellow-400 text-xl"></i>
   </a>
