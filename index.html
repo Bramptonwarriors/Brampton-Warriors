@@ -639,6 +639,10 @@ function closeLeague(){
   window.onload = function() {
   document.getElementById("loader").style.display = "none";
 }
+  function toggleSocials() {
+  const menu = document.getElementById("socialMenu");
+  menu.classList.toggle("hidden");
+}
 </script>
 
 <!-- FOOTER -->
@@ -698,44 +702,55 @@ function closeLeague(){
 </div>
 
 </footer>
-  <!-- FLOATING SOCIAL BAR -->
-<div class="fixed right-4 bottom-20 flex flex-col gap-3 z-50">
+<!-- FLOATING SOCIAL BUTTON -->
+<div class="fixed right-5 bottom-20 z-50">
 
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank"
-     class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-    <i class="fa-brands fa-instagram text-black"></i>
-  </a>
+  <!-- MAIN BUTTON -->
+  <button onclick="toggleSocials()"
+    class="bg-yellow-500 text-black w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-2xl hover:scale-110 transition">
+    <i class="fa-solid fa-share-nodes"></i>
+  </button>
 
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/profile.php?id=61578513874395" target="_blank"
-     class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-    <i class="fa-brands fa-facebook text-black"></i>
-  </a>
+  <!-- DROPDOWN ICONS -->
+  <div id="socialMenu"
+    class="hidden flex-col items-center gap-3 mt-4">
 
-  <!-- Snapchat -->
-  <a href="https://www.snapchat.com/@bramptonw2026" target="_blank"
-     class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-    <i class="fa-brands fa-snapchat text-black"></i>
-  </a>
+    <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-brands fa-instagram text-black"></i>
+    </a>
 
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@BRAMPTONWARRIORSCC" target="_blank"
-     class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-    <i class="fa-brands fa-youtube text-black"></i>
-  </a>
+    <a href="https://www.facebook.com/profile.php?id=61578513874395" target="_blank"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-brands fa-facebook text-black"></i>
+    </a>
 
-  <!-- TikTok -->
-  <a href="https://www.tiktok.com/@brampton_warriors?lang=en" target="_blank"
-     class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-    <i class="fa-brands fa-tiktok text-black"></i>
-  </a>
+    <a href="https://www.snapchat.com/@bramptonw2026" target="_blank"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-brands fa-snapchat text-black"></i>
+    </a>
 
-  <!-- Email -->
-  <a href="mailto:teambramptonwarriors@gmail.com"
-     class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
-    <i class="fa-solid fa-envelope text-black"></i>
-  </a>
+    <a href="https://www.youtube.com/@BRAMPTONWARRIORSCC" target="_blank"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-brands fa-youtube text-black"></i>
+    </a>
+
+    <a href="https://x.com/BramptonW29424" target="_blank"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-brands fa-x-twitter text-black"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@brampton_warriors?lang=en" target="_blank"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-brands fa-tiktok text-black"></i>
+    </a>
+
+    <a href="mailto:teambramptonwarriors@gmail.com"
+       class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition">
+      <i class="fa-solid fa-envelope text-black"></i>
+    </a>
+
+  </div>
 
 </div>
 
