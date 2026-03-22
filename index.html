@@ -75,6 +75,17 @@
 .ltr {
   animation: fastLTR 1.2s linear infinite;
 }
+     /* GOLD GLOW BUTTON */
+.glow-btn {
+  box-shadow:
+    0 0 8px rgba(250,204,21,0.7),
+    0 0 18px rgba(250,204,21,0.5);
+}
+
+/* SOCIAL DROPDOWN ANIMATION */
+#socialDropdown {
+  transition: all 0.3s ease;
+}
   </style>
 </head>
 
@@ -116,21 +127,20 @@
 
   <!-- JOIN BUTTON -->
   <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfy2YJqUhBA-9AC7NJXspSHwrmTIviGZ0MCnFEtui_7l0oVoA/viewform?usp=header', '_blank')" 
-    class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900 transition">
+  class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900 transition glow-btn">
     Join Team
   </button>
 
-  <!-- HAMBURGER BUTTON -->
-  <button onclick="toggleSocials()"
-    class="bg-black px-4 py-3 rounded-lg text-yellow-400 text-xl hover:bg-gray-900 transition">
-    <i class="fa-solid fa-bars"></i>
+  <!-- SOCIAL MENU BUTTON (3 lines) -->
+  <button onclick="toggleSocialMenu()" 
+    class="bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
+    <i class="fas fa-bars text-xl"></i>
   </button>
 
 </div>
 </header>
-  <!-- DROPDOWN SOCIAL MENU -->
-<div id="socialMenu"
-  class="hidden absolute right-5 top-24 bg-black border border-yellow-500 rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50">
+<!-- SOCIAL DROPDOWN -->
+<div id="socialDropdown" class="hidden absolute right-5 top-24 bg-black border border-yellow-500 rounded-xl p-4 flex flex-col gap-4 shadow-xl z-50">
 
   <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank">
     <i class="fa-brands fa-instagram text-yellow-400 text-xl"></i>
@@ -152,7 +162,7 @@
     <i class="fa-brands fa-x-twitter text-yellow-400 text-xl"></i>
   </a>
 
-  <a href="https://www.tiktok.com/@brampton_warriors?lang=en" target="_blank">
+  <a href="https://www.tiktok.com/@brampton_warriors" target="_blank">
     <i class="fa-brands fa-tiktok text-yellow-400 text-xl"></i>
   </a>
 
@@ -683,8 +693,8 @@ function closeLeague(){
   window.onload = function() {
   document.getElementById("loader").style.display = "none";
 }
-  function toggleSocials() {
-  const menu = document.getElementById("socialMenu");
+  function toggleSocialMenu() {
+  let menu = document.getElementById("socialDropdown");
   menu.classList.toggle("hidden");
 }
 </script>
