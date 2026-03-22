@@ -17,17 +17,10 @@
      /* GLOW TEXT */
 .glow-text {
   animation: glowPulse 2s infinite alternate;
+  text-shadow:
+    0 0 10px rgba(250,204,21,0.9),
+    0 0 25px rgba(250,204,21,0.7);
 }
-
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-  }
-  to {
-    text-shadow: 0 0 20px #fff176, 0 0 40px #facc15;
-  }
-}
-
 /* BLACK LINE BASE */
 .line-container {
   position: relative;
@@ -38,12 +31,6 @@
   border-radius: 2px;
 }
 
-/* GLOW TEXT */
-.glow-text {
-  text-shadow:
-    0 0 10px rgba(250,204,21,0.9),
-    0 0 25px rgba(250,204,21,0.7);
-}
 
 /* FULL WIDTH BLACK LINE */
 .line-full {
@@ -218,8 +205,7 @@
 </div>
 
 <!-- HERO -->
-<section
-<div class="flex flex-col items-center gap-6 w-full">
+<section class="flex flex-col items-center gap-6 w-full">
 
   <!-- TOP LINE (FULL WIDTH) -->
   <div class="line-full">
@@ -759,20 +745,17 @@ function toggleSocialMenu() {
   let menu = document.getElementById("socialDropdown");
   let icon = document.getElementById("menuIcon");
 
-  menu.classList.toggle("show");
-
   if (menu.classList.contains("show")) {
-    icon.classList.replace("fa-bars", "fa-xmark");
-  } else {
+    menu.classList.remove("show");
     icon.classList.replace("fa-xmark", "fa-bars");
+  } else {
+    menu.classList.add("show");
+    icon.classList.replace("fa-bars", "fa-xmark");
   }
 }
-  
-}
-</script>
 
 <!-- FOOTER -->
-
+<footer>
 <div class="w-full flex justify-center py-4">
 
   <div class="flex items-center gap-6 bg-black/10 px-6 py-3 rounded-full shadow-md">
@@ -828,6 +811,6 @@ function toggleSocialMenu() {
 </div>
 
 </footer>
-
+  </script>
 </body>
 </html>
