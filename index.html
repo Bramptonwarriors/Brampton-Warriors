@@ -16,9 +16,16 @@
 }
      /* GLOW TEXT */
 .glow-text {
-  text-shadow:
-    0 0 10px rgba(250,204,21,0.8),
-    0 0 20px rgba(250,204,21,0.6);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+  }
+  to {
+    text-shadow: 0 0 20px #fff176, 0 0 40px #facc15;
+  }
 }
 
 /* BLACK LINE BASE */
@@ -81,10 +88,44 @@
     0 0 8px rgba(250,204,21,0.7),
     0 0 18px rgba(250,204,21,0.5);
 }
-
-/* SOCIAL DROPDOWN ANIMATION */
+/* PREMIUM GLASS DROPDOWN */
 #socialDropdown {
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(250,204,21,0.5);
+  box-shadow: 0 0 25px rgba(250,204,21,0.3);
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+#socialDropdown.show {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+     /* ICON HOVER GLOW */
+#socialDropdown a {
   transition: all 0.3s ease;
+}
+
+#socialDropdown a:hover {
+  transform: scale(1.3) rotate(8deg);
+}
+
+#socialDropdown a:hover i {
+  color: white;
+  text-shadow:
+    0 0 10px #facc15,
+    0 0 25px #facc15,
+    0 0 40px #facc15;
+}
+     button:active {
+  transform: scale(0.92);
+}
+     html {
+  scroll-behavior: smooth;
 }
   </style>
 </head>
@@ -132,10 +173,12 @@
   </button>
 
   <!-- SOCIAL MENU BUTTON (3 lines) -->
-  <button id="socialBtn" onclick="toggleSocialMenu()" 
-    class="bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
-    <i class="fas fa-bars text-xl"></i>
-  </button>
+ <button id="socialBtn" onclick="toggleSocialMenu()" 
+  class="bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
+
+  <i id="menuIcon" class="fas fa-bars text-xl"></i>
+
+</button>
 
 </div>
 </header>
@@ -289,7 +332,7 @@
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
 
     <!-- PLAYER CARD -->
-    <div onclick="openProfile('sahil')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
+    <div onclick="openProfile('sahil')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transitionhover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SAHIL%20BAWA.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">SAHIL BAWA</h3>
@@ -297,7 +340,7 @@
       </div>
     </div>
   
-    <div onclick="openProfile('mandip')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
+    <div onclick="openProfile('mandip')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANDIP%20SINGH.jpeg" class="w-full h-48 object-cover object-[center_10%]">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">MANDIP SINGH</h3>
@@ -306,7 +349,7 @@
     </div>
  
 
-    <div onclick="openProfile('kushav')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
+    <div onclick="openProfile('kushav')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KUSHAV%20SHARMA.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">KUSHAV SHARMA</h3>
@@ -314,98 +357,98 @@
       </div>
     </div>
 
-   <div onclick="openProfile('jaspreet')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-yellow-500/40">
+   <div onclick="openProfile('jaspreet')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/JASPREET%20SINGH.jpeg" class="w-full h-48 object-cover object-[center_10%]">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">JASPREET SINGH</h3>
         <p class="text-yellow-400 text-sm">ALL-ROUNDER</p>
       </div>
     </div>
-<div onclick="openProfile('harfateh')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition">
+<div onclick="openProfile('harfateh')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
    <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/HARFATEH%20SINGH.jpeg" class="w-full h-48 object-cover object-top">
   <div class="p-4 text-center"> 
     <h3 class="font-bold text-lg">HARFATEH SINGH</h3> 
     <p class="text-yellow-400 text-sm">ALL-ROUNDER</p> 
   </div>
 </div>     
-   <div onclick="openProfile('manshuman')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition">
+   <div onclick="openProfile('manshuman')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hiddentransform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
        <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANSHUMAN.jpeg" class="w-full h-48 object-cover object-[center_10%]">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">MANSHUMAN</h3>
         <p class="text-yellow-400 text-sm">ALL-ROUNDER</p> 
       </div> 
     </div>    
-   <div onclick="openProfile('ankush')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+   <div onclick="openProfile('ankush')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hiddentransform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/ANKUSH%20BAJOTRA.jpeg" class="w-full h-48 object-cover object-[center_5%]">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">ANKUSH BAJOTRA</h3> 
         <p class="text-yellow-400 text-sm">BOWLER</p> 
       </div> 
     </div>     
-    <div onclick="openProfile('paramveer')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+    <div onclick="openProfile('paramveer')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
        <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/PARAMVEER%20SOHI.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">PARAMVEER SOHI</h3>
         <p class="text-yellow-400 text-sm">BATSMAN</p> 
       </div> 
     </div>     
-    <div onclick="openProfile('karamveer')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+    <div onclick="openProfile('karamveer')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
        <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KARAMVEER%20PURBA.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">KARAMVEER PURBA</h3> 
         <p class="text-yellow-400 text-sm">ALL-ROUNDER</p> 
       </div> 
     </div> 
-   <div onclick="openProfile('parampuneet')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+   <div onclick="openProfile('parampuneet')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
      <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/PARAMPUNEET%20KHAIRA.jpeg" class="w-full h-48 object-cover object-[center_10%]">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">PARAMPUNEET KHAIRA</h3>
         <p class="text-yellow-400 text-sm">ALL-ROUNDER</p> 
       </div> 
     </div>
-    <div onclick="openProfile('akash')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+    <div onclick="openProfile('akash')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/AKASH%20BAWA.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">AKASH BAWA</h3>
         <p class="text-yellow-400 text-sm">WICKET KEEPER</p> 
       </div>
     </div>
-    <div onclick="openProfile('sumit')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+    <div onclick="openProfile('sumit')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SUMIT%20CHANGA.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">SUMIT CHANGA</h3>
         <p class="text-yellow-400 text-sm">ALL-ROUNDER</p> 
       </div>
     </div>
-     <div onclick="openProfile('arvinder')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+     <div onclick="openProfile('arvinder')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/ARVINDER%20DHILLON.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">ARVINDER DHILLON</h3>
         <p class="text-yellow-400 text-sm">WICKET KEEPER</p> 
       </div>
     </div>
-     <div onclick="openProfile('sarang')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+     <div onclick="openProfile('sarang')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]"> 
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SARANG%20BHAGAT.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">SARANG BHAGAT</h3>
         <p class="text-yellow-400 text-sm">BATSMAN</p> 
       </div>
     </div>
-     <div onclick="openProfile('kawanjot')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+     <div onclick="openProfile('kawanjot')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KAWANJOT%20SINGH.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">KAWANJOT SINGH</h3>
         <p class="text-yellow-400 text-sm">BATSMAN</p> 
       </div>
     </div>
-     <div onclick="openProfile('honey')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+     <div onclick="openProfile('honey')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/HONEY%20BRAR.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">HONEY BRAR</h3>
         <p class="text-yellow-400 text-sm">BATSMAN</p> 
       </div>
     </div>
-     <div onclick="openProfile('karanpal')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden hover:scale-105 hover:shadow-yellow-500/40 transition"> 
+     <div onclick="openProfile('karanpal')" class="cursor-pointer bg-gradient-to-br from-gray-800 to-black border border-yellow-500 rounded-2xl overflow-hidden transform transition hover:scale-105 hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]">
       <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KARANPAL%20SINGH.jpeg" class="w-full h-48 object-cover object-top">
       <div class="p-4 text-center">
         <h3 class="font-bold text-lg">KARANPAL SINGH</h3>
@@ -690,21 +733,41 @@ function closeLeague(){
   document.getElementById("leagueModal").classList.add("hidden");
   document.getElementById("leagueModal").classList.remove("flex");
 }
-  window.onload = function() {
-  document.getElementById("loader").style.display = "none";
+ window.onload = function() {
+  let loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  loader.style.transition = "opacity 0.5s ease";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
 }
   function toggleSocialMenu() {
   let menu = document.getElementById("socialDropdown");
-  menu.classList.toggle("hidden");
+  menu.classList.toggle("show");
 }
   document.addEventListener("click", function(event) {
   let menu = document.getElementById("socialDropdown");
   let button = document.getElementById("socialBtn");
 
   if (!menu.contains(event.target) && !button.contains(event.target)) {
-    menu.classList.add("hidden");
+   menu.classList.remove("show");
   }
 });
+  function toggleSocialMenu() {
+  let menu = document.getElementById("socialDropdown");
+  let icon = document.getElementById("menuIcon");
+
+  menu.classList.toggle("show");
+
+  if (menu.classList.contains("show")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-xmark");
+  } else {
+    icon.classList.remove("fa-xmark");
+    icon.classList.add("fa-bars");
+  }
+}
 </script>
 
 <!-- FOOTER -->
