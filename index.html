@@ -132,7 +132,7 @@
   </button>
 
   <!-- SOCIAL MENU BUTTON (3 lines) -->
-  <button onclick="toggleSocialMenu()" 
+  <button id="socialBtn" onclick="toggleSocialMenu()" 
     class="bg-black p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition">
     <i class="fas fa-bars text-xl"></i>
   </button>
@@ -697,6 +697,14 @@ function closeLeague(){
   let menu = document.getElementById("socialDropdown");
   menu.classList.toggle("hidden");
 }
+  document.addEventListener("click", function(event) {
+  let menu = document.getElementById("socialDropdown");
+  let button = document.getElementById("socialBtn");
+
+  if (!menu.contains(event.target) && !button.contains(event.target)) {
+    menu.classList.add("hidden");
+  }
+});
 </script>
 
 <!-- FOOTER -->
