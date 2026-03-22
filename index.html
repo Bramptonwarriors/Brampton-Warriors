@@ -154,15 +154,19 @@
             
     </h1>
   </div>
-<div class="flex items-center gap-3">
-
-  <!-- JOIN BUTTON -->
-  <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfy2YJqUhBA-9AC7NJXspSHwrmTIviGZ0MCnFEtui_7l0oVoA/viewform?usp=header', '_blank')" 
-  class="bg-black px-5 py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900 transition glow-btn">
+<div class="flex items-center gap-3 flex-wrap justify-end">
+  
+  <button 
+    onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfy2YJqUhBA-9AC7NJXspSHwrmTIviGZ0MCnFEtui_7l0oVoA/viewform?usp=header', '_blank')" 
+    class="bg-black px-3 md:px-5 py-2 md:py-3 rounded-lg text-yellow-400 font-bold hover:bg-gray-900 transition glow-btn whitespace-nowrap text-sm md:text-base">
     Join Team
   </button>
 
-
+  <button id="socialBtn" 
+    onclick="toggleSocialMenu()" 
+    class="bg-black p-2 md:p-3 rounded-lg text-yellow-400 glow-btn hover:bg-gray-900 transition shrink-0">
+    <i class="fas fa-bars text-lg md:text-xl"></i>
+  </button>
 
 </div>
 </header>
