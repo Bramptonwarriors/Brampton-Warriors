@@ -79,9 +79,13 @@
 </head>
 
 <body class="bg-gradient-to-br from-black via-gray-900 to-yellow-700 text-white font-sans">
+  <!-- 🔥 LOADER -->
+  <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+  <h1 class="text-yellow-400 text-3xl font-bold animate-pulse">Brampton Warriors</h1>
+</div>
 
 <!-- HEADER -->
-<header class="flex justify-between items-center p-5 bg-gradient-to-r from-yellow-500 to-orange-600 shadow-lg">
+<header class="sticky top-0 z-50 flex justify-between items-center p-5 bg-gradient-to-r from-yellow-500 to-orange-600 shadow-lg">
   <div class="flex items-center gap-4">
     <!-- Bigger Logo -->
     <img src="https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/logo.jpeg" 
@@ -628,6 +632,9 @@ function openLeague(id){
 function closeLeague(){
   document.getElementById("leagueModal").classList.add("hidden");
   document.getElementById("leagueModal").classList.remove("flex");
+}
+  window.onload = function() {
+  document.getElementById("loader").style.display = "none";
 }
 </script>
 
