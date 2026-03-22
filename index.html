@@ -183,7 +183,7 @@
 </div>
 </header>
 <!-- SOCIAL DROPDOWN -->
-<div id="socialDropdown" class="hidden absolute right-5 top-24 bg-black border border-yellow-500 rounded-xl p-4 flex flex-col gap-4 shadow-xl z-50">
+<div id="socialDropdown" class="absolute right-5 top-24 bg-black border border-yellow-500 rounded-xl p-4 flex flex-col gap-4 shadow-xl z-50">
 
   <a href="https://www.instagram.com/bramptonwarriors11/" target="_blank">
     <i class="fa-brands fa-instagram text-yellow-400 text-xl"></i>
@@ -742,18 +742,7 @@ function closeLeague(){
     loader.style.display = "none";
   }, 500);
 }
-  function toggleSocialMenu() {
-  let menu = document.getElementById("socialDropdown");
-  menu.classList.toggle("show");
-}
-  document.addEventListener("click", function(event) {
-  let menu = document.getElementById("socialDropdown");
-  let button = document.getElementById("socialBtn");
 
-  if (!menu.contains(event.target) && !button.contains(event.target)) {
-   menu.classList.remove("show");
-  }
-});
   function toggleSocialMenu() {
   let menu = document.getElementById("socialDropdown");
   let icon = document.getElementById("menuIcon");
