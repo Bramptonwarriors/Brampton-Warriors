@@ -334,6 +334,14 @@
 <!-- PLAYERS -->
 <section class="py-12">
   <h2 class="text-3xl text-center font-bold mb-10 text-yellow-400">SQUAD</h2>
+  <!-- SQUAD TEAM PHOTO -->
+<div class="flex justify-center mb-10 px-6">
+  <img 
+    src="YOUR_SQUAD_PHOTO_LINK_HERE"
+    onclick="openSquadPhoto()"
+    class="w-full max-w-5xl rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition"
+  >
+</div>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
 
@@ -535,6 +543,18 @@
      class="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl">
 
   <button onclick="closeJersey()" 
+          class="absolute top-6 right-6 bg-yellow-500 px-4 py-2 rounded font-bold">
+    Close
+  </button>
+</div>
+  <!-- SQUAD PHOTO POPUP -->
+<div id="squadModal"
+     class="fixed inset-0 hidden flex justify-center items-center bg-black/95 z-50 p-4">
+  
+  <img id="squadImage"
+       class="max-w-[95vw] max-h-[95vh] object-contain rounded-xl shadow-2xl">
+
+  <button onclick="closeSquadPhoto()"
           class="absolute top-6 right-6 bg-yellow-500 px-4 py-2 rounded font-bold">
     Close
   </button>
@@ -778,6 +798,17 @@ function toggleSocialMenu() {
     menu.classList.add("show");
     icon.classList.replace("fa-bars", "fa-xmark");
   }
+}
+  function openSquadPhoto(){
+  document.getElementById("squadModal").classList.remove("hidden");
+  document.getElementById("squadModal").classList.add("flex");
+
+  document.getElementById("squadImage").src = "YOUR_SQUAD_PHOTO_LINK_HERE";
+}
+
+function closeSquadPhoto(){
+  document.getElementById("squadModal").classList.add("hidden");
+  document.getElementById("squadModal").classList.remove("flex");
 }
    </script>
 
