@@ -616,24 +616,242 @@
 <script>
 
 const players = {
-sahil:{name:"SAHIL BAWA",role:"Batsman",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SAHIL%20BAWA.jpeg",runs:0,wickets:0,matches:0},
-mandip:{name:"MANDIP SINGH",role:"Batsman",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANDIP%20SINGH.jpeg",runs:0,wickets:0,matches:0},
-kushav:{name:"KUSHAV SHARMA",role:"Bowler",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KUSHAV%20SHARMA.jpeg",runs:0,wickets:0,matches:0},
-jaspreet:{name:"JASPREET SINGH",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/JASPREET%20SINGH.jpeg",runs:0,wickets:0,matches:0},
-harfateh:{name:"HARFATEH SINGH",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/HARFATEH%20SINGH.jpeg",runs:0,wickets:0,matches:0},
-manshuman:{name:"MANSHUMAN",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANSHUMAN.jpeg",runs:0,wickets:0,matches:0},
-ankush:{name:"ANKUSH BAJOTRA",role:"Bowler",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/ANKUSH%20BAJOTRA.jpeg",runs:0,wickets:0,matches:0},
-paramveer:{name:"PARAMVEER SOHI",role:"Batsman",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/PARAMVEER%20SOHI.jpeg",runs:0,wickets:0,matches:0},
-karamveer:{name:"KARAMVEER PURBA",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KARAMVEER%20PURBA.jpeg",runs:0,wickets:0,matches:0},
-parampuneet:{name:"PARAMPUNEET KHAIRA",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/PARAMPUNEET%20KHAIRA.jpeg",runs:0,wickets:0,matches:0},
-akash:{name:"AKASH BAWA",role:"Wicket Keeper",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/AKASH%20BAWA.jpeg",runs:0,wickets:0,matches:0},
-arvinder:{name:"ARVINDER DHILLON",role:"Wicket Keeper",img:"https://i.postimg.cc/d0szcjf3/arvinder-dhillon1.jpg",runs:0,wickets:0,matches:0},
-sarang:{name:"SARANG BHAGAT",role:"Batsman",img:"https://i.postimg.cc/J7gmF4Gj/SARANG-BHAGAT1.jpg",runs:0,wickets:0,matches:0},
-sumit:{name:"SUMIT CHANGA",role:"All-Rounder",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SUMIT%20CHANGA.jpeg",runs:0,wickets:0,matches:0},
-kawanjot:{name:"KAWANJOT SINGH",role:"Batsman",img:"https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KAWANJOT%20SINGH.jpeg",runs:0,wickets:0,matches:0},
-karanvirpal:{name:"KARANVIRPAL SINGH",role:"All-Rounder",img:"https://i.postimg.cc/J45fJzmh/KARANPAL1.jpg",runs:0,wickets:0,matches:0},
-ammy:{name:"AMMY SANDHU",role:"All-Rounder",img:"https://i.postimg.cc/7ZxCCBkj/AMMY1.jpg",runs:0,wickets:0,matches:0},
-sehraaj:{name:"SEHRAAJ CHAHAL",role:"Bowler",img:"https://i.postimg.cc/XJyMyK7B/SEHRAAJ1.jpg",runs:0,wickets:0,matches:0},};
+
+  sahil: {
+    name: "SAHIL BAWA",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SAHIL%20BAWA.jpeg",
+    matches: 1, runs: 7, wickets: 1,
+    sr: 53.85, avg: 7.00, highest: 7,
+    fours: 0, sixes: 0,
+    economy: 6.50,
+    bestBowling: "1/20",
+    catches: 0, stumpings: 0,
+    impact: "All-round contribution in opening match"
+  },
+
+  mandip: {
+    name: "MANDIP SINGH",
+    role: "Batsman",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANDIP%20SINGH.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0,
+    impact: "Yet to play this season"
+  },
+
+  kushav: {
+    name: "KUSHAV SHARMA",
+    role: "Bowler",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KUSHAV%20SHARMA.jpeg",
+    matches: 1, runs: 0, wickets: 1,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 10,
+    bestBowling: "1/30",
+    catches: 0,
+    impact: "Key bowling option"
+  },
+
+  jaspreet: {
+    name: "JASPREET SINGH",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/JASPREET%20SINGH.jpeg",
+    matches: 1, runs: 10, wickets: 0,
+    sr: 83.33, avg: 10, highest: 10,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0,
+    impact: "Leader & all-round balance"
+  },
+
+  harfateh: {
+    name: "HARFATEH SINGH",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/HARFATEH%20SINGH.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Strong utility player"
+  },
+
+  manshuman: {
+    name: "MANSHUMAN",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/MANSHUMAN.jpeg",
+    matches: 1, runs: 2, wickets: 2,
+    sr: 100, avg: 2, highest: 2,
+    fours: 0, sixes: 0,
+    economy: 10.30,
+    bestBowling: "2/30",
+    catches: 0, stumpings: 0,
+    impact: "Adds squad depth"
+  },
+
+  ankush: {
+    name: "ANKUSH BAJOTRA",
+    role: "Bowler",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/ANKUSH%20BAJOTRA.jpeg",
+    matches: 1, runs: 2, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 9.30,
+    bestBowling: "0/37",
+    catches: 0,
+    impact: "Bowling unit strength"
+  },
+
+  paramveer: {
+    name: "PARAMVEER SOHI",
+    role: "Batsman",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/PARAMVEER%20SOHI.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Top-order potential"
+  },
+
+  karamveer: {
+    name: "KARAMVEER PURBA",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KARAMVEER%20PURBA.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Balance player"
+  },
+
+  parampuneet: {
+    name: "PARAMPUNEET KHAIRA",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/PARAMPUNEET%20KHAIRA.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Flexible role player"
+  },
+
+  akash: {
+    name: "AKASH BAWA",
+    role: "Wicket Keeper",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/AKASH%20BAWA.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Safe hands behind stumps"
+  },
+
+  arvinder: {
+    name: "ARVINDER DHILLON",
+    role: "Wicket Keeper",
+    img: "https://i.postimg.cc/d0szcjf3/arvinder-dhillon1.jpg",
+    matches: 1, runs: 4, wickets: 0,
+    sr: 30.77, avg: 4, highest: 4,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Backup keeper option"
+  },
+
+  sarang: {
+    name: "SARANG BHAGAT",
+    role: "Batsman",
+    img: "https://i.postimg.cc/J7gmF4Gj/SARANG-BHAGAT1.jpg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Middle-order strength"
+  },
+
+  sumit: {
+    name: "SUMIT CHANGA",
+    role: "All-Rounder",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/SUMIT%20CHANGA.jpeg",
+    matches: 0, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Dynamic all-rounder"
+  },
+
+  kawanjot: {
+    name: "KAWANJOT SINGH",
+    role: "Batsman",
+    img: "https://raw.githubusercontent.com/Bramptonwarriors/Brampton-Warriors/main/KAWANJOT%20SINGH.jpeg",
+    matches: 1, runs: 7, wickets: 0,
+    sr:38.89, avg: 7, highest: 7,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Batting depth"
+  },
+
+  karanvirpal: {
+    name: "KARANVIRPAL SINGH",
+    role: "All-Rounder",
+    img: "https://i.postimg.cc/J45fJzmh/KARANPAL1.jpg",
+    matches: 1, runs: 35, wickets: 0,
+    sr: 166.67, avg: 35, highest: 35,
+    fours: 1, sixes: 4,
+    economy: 11.50,
+    bestBowling: "-",
+    catches: 2, stumpings: 0,
+    impact: "Versatile performer"
+  },
+
+  ammy: {
+    name: "AMMY SANDHU",
+    role: "All-Rounder",
+    img: "https://i.postimg.cc/7ZxCCBkj/AMMY1.jpg",
+    matches: 1, runs: 18, wickets: 0,
+    sr: 200, avg: 18, highest: 18,
+    fours: 0, sixes: 2,
+    economy: 9.50,
+    bestBowling: "1/19",
+    catches: 2, stumpings: 0,
+    impact: "Energy player"
+  },
+
+  sehraaj: {
+    name: "SEHRAAJ CHAHAL",
+    role: "Bowler",
+    img: "https://i.postimg.cc/XJyMyK7B/SEHRAAJ1.jpg",
+    matches: 1, runs: 0, wickets: 0,
+    sr: 0, avg: 0, highest: 0,
+    fours: 0, sixes: 0,
+    economy: 0,
+    bestBowling: "-",
+    catches: 0, stumpings: 0,
+    impact: "Bowling specialist"
+  }
+
+};
 function openProfile(id){
   let p = players[id];
   document.getElementById("playerModal").classList.remove("hidden");
