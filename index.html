@@ -501,6 +501,48 @@
       <h3 id="matches" class="text-sm font-bold"></h3>
       <p class="text-xs text-gray-300">Matches</p>
     </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="sr" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">sr</p>
+    </div>
+
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="avg" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">avg</p>
+    </div>
+<div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="highest" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">highest</p>
+    </div>
+
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="fours" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">fours</p>
+    </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="sixes" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">sixes</p>
+    </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="economy" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">economy</p>
+    </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="best bowling" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">best bowlings</p>
+    </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="catches" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">catches</p>
+    </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="stumpings" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">stumpings</p>
+    </div>
+    <div class="bg-gray-900/80 px-3 py-2 rounded-lg text-center w-20">
+      <h3 id="impact" class="text-sm font-bold"></h3>
+      <p class="text-xs text-gray-300">impact</p>
+    </div>
 
   </div>
 
@@ -852,21 +894,35 @@ const players = {
   }
 
 };
-function openProfile(id){
+function openProfile(id) {
   let p = players[id];
+
   document.getElementById("playerModal").classList.remove("hidden");
   document.getElementById("playerModal").classList.add("flex");
 
   document.getElementById("playerName").innerText = p.name;
   document.getElementById("playerRole").innerText = p.role;
 
-  // Use HD popup image (1.jpeg)
- document.getElementById("playerBg").src = p.img.replace(".jpeg","1.jpeg");
+  // HD popup image if available
+  document.getElementById("playerBg").src = p.img.replace(".jpeg", "1.jpeg");
+
   document.getElementById("runs").innerText = p.runs;
   document.getElementById("wickets").innerText = p.wickets;
   document.getElementById("matches").innerText = p.matches;
+
+  document.getElementById("sr").innerText = p.sr;
+  document.getElementById("avg").innerText = p.avg;
+  document.getElementById("highest").innerText = p.highest;
+  document.getElementById("fours").innerText = p.fours;
+  document.getElementById("sixes").innerText = p.sixes;
+  document.getElementById("economy").innerText = p.economy;
+  document.getElementById("bestBowling").innerText = p.bestBowling;
+  document.getElementById("catches").innerText = p.catches;
+  document.getElementById("stumpings").innerText = p.stumpings;
+  document.getElementById("impact").innerText = p.impact;
 }
-  function closeProfile(){
+
+function closeProfile() {
   document.getElementById("playerModal").classList.add("hidden");
   document.getElementById("playerModal").classList.remove("flex");
 }
@@ -997,6 +1053,9 @@ function toggleSocialMenu() {
     icon.classList.replace("fa-bars", "fa-xmark");
   }
 }
+  document.getElementById("playerBg").src = p.img.includes(".jpeg")
+  ? p.img.replace(".jpeg", "1.jpeg")
+  : p.img;
  
    </script>
 
